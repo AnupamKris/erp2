@@ -2,7 +2,7 @@
   <div class="materials">
     <div class="dropdown">
       <select name="year" id="years" v-model="year">
-        <option value="Year 1">Year 1</option>
+        <option value="Year 1" selected>Year 1</option>
         <option value="Year 2">Year 2</option>
         <option value="Year 3">Year 3</option>
         <option value="Year 4">Year 4</option>
@@ -18,8 +18,8 @@
         <option v-if="year == 'Year 4'" value="8">Sem 8</option>
       </select>
       <div class="input">
-        <input type="text" v-model="query" />
-        <i class="fa fa-lens"></i>
+        <input type="text" v-model="query" placeholder="Search" />
+        <i class="fa fa-search" style="color: black"></i>
       </div>
     </div>
 
@@ -44,8 +44,8 @@ export default {
   setup() {
     const query = ref("");
     const searchResults = ref([]);
-    const year = ref("");
-    const sem = ref("");
+    const year = ref("Year 1");
+    const sem = ref("1");
     const materials = ref([
       {
         subject: "OS",
@@ -183,27 +183,40 @@ export default {
 
   .dropdown {
     width: 90%;
-    margin-top: 10px;
+    margin: 10px 0;
     display: flex;
     justify-content: space-between;
     select {
+      font-size: 18px;
       height: 50px;
       width: 15%;
-      border-radius: 5px;
+      border: none;
       outline: 0;
+      text-align: center;
+    }
+    select[name="year"] {
+      border-radius: 25px 0 0 25px;
     }
   }
   .input {
     width: 70%;
     min-height: 50px;
-    
+    position: relative;
     input {
       height: 100%;
       width: 100%;
+      font-size: 18px;
       border: none;
-      border-radius: 5px;
+      border-radius: 0 25px 25px 0;
       outline: none;
       text-align: center;
+    }
+    i {
+      position: absolute;
+      right: 15px;
+      font-size: 20px;
+      top: 50%;
+      transform: translate(0, -50%);
     }
   }
 }
