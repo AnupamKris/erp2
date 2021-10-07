@@ -37,7 +37,7 @@ export default {
   .material {
     margin: 5px 0;
     width: 90%;
-    height: 80px;
+    min-height: 80px;
     display: flex;
     border-radius: 10px;
     overflow: hidden;
