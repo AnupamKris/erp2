@@ -13,8 +13,7 @@
   import ref from "vue"
   export default {
     components: {
-      Material,
-      
+      Material,   
     },
     setup() {
       const query = ref("")
