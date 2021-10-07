@@ -14,6 +14,7 @@
   export default {
     components: {
       Material,
+      
     },
     setup() {
       const query = ref("")
