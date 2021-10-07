@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Authentication from '../views/Authentication.vue'
+import Materials from '../views/Materials.vue'
 
 const routes = [
   {
@@ -8,6 +9,12 @@ const routes = [
     name: 'Home',
     component: Home,
     alias: '/home',
+  },
+  
+  {
+    path: '/materials',
+    name: 'Materials',
+    component: Materials
   },
   {
     path: '/authentication',
