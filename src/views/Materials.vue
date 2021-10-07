@@ -2,23 +2,37 @@
   <div class="materials">
     {{query}}
     <input type="text" v-model="query">
-    <Material subject="OS" code="AD8301" description="Unit  1 Notes"/>
-    <Material subject="FODS" code="AD8351" description="Unit  1 Notes"/>
-    <Material subject="OS" code="AD8301" description="Unit  2 Notes"/>
+    <Material subject="OS" code="AD8301" description="Unit  1 Notes" v-for="(item, index) in materials" :key="index"/>
+    
   </div>
 </template>
 
 <script>
   import Material from "@/components/Material.vue"
-  import ref from "vue"
+  import { ref } from "vue"
   export default {
     components: {
       Material,   
     },
     setup() {
       const query = ref("")
+      const materials = ref([
+        {
+          subject: "OS",
+          code: "AD8301",
+          description: "Unit 1 Notes"
+        },
+        {
+          subject: "FODS",
+          code: "AD8351",
+          description: "Unit 2 Notes"
+        },
+
+      ])
+
       return {
-        query
+        query,
+        materials
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
-  <div class="profile-field">
+  <div class="profile-field"  :class="{big : big}">
     <span>{{label}}</span>
-    <p :class="{big : big}">{{value}}</p>
+    <p>{{value}}</p>
   </div>
 </template>
 
@@ -48,5 +48,6 @@ export default {
 
 .big {
   min-height: auto;
+  
 }
 </style>

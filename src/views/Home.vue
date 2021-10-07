@@ -34,7 +34,7 @@
           <ProfileField label="Blood Group" value="B+ve" />
           
           <div class="sep"></div>
-          <ProfileField label="Permanent Addres" value="Krishnakripa, Mullai apts, Thirumullaivoyal, 11th St, Chennai - 62" big="true"/>
+          <ProfileField label="Permanent Addres" value="Krishnakripa, Mullai apts, Thirumullaivoyal, 11th St, Chennai - 62" :big="true"/>
           
           <div class="sep"></div>
           <ProfileField label="Boarding Point" value="Thirumullaivoyal" />
@@ -43,7 +43,10 @@
           <ProfileField label="Bus Number" value="Thirumullaivoyal" />
           
           <div class="sep"></div>
-          <ProfileField label="Food" value="Lunch Only" />
+          <ProfileField label="Emergency Contact" value="K K Sajith" />
+
+          <div class="sep"></div>
+          <ProfileField label="Emergency Number" value="9444555522" />
           
         </div>
       </div>
