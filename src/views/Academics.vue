@@ -17,6 +17,12 @@
         <option v-if="year == '4'" value="7">Sem 7</option>
         <option v-if="year == '4'" value="8">Sem 8</option>
       </select>
+      <select name="test" id="tests" v-model="testName">
+        <option value="iat1" selected>IAT 1</option>
+        <option value="iat2">IAT 2</option>
+        <option value="iat3">IAT 3</option>
+        <option value="model">Model</option>
+      </select>
     </div>
     <Marks :markData="markData" />
   </div>
@@ -33,15 +39,46 @@ export default {
   setup() {
     const year = ref("1");
     const sem = ref("1");
+    const testName = ref("iat1");
 
     const markData = [
-      { subcode: "AD8302", name: "Fundamentals Of Data Science" , mark: 50, grade: 'A'},
+      {
+        subcode: "AD8302",
+        name: "Fundamentals Of Data Science",
+        mark: 50,
+        grade: "A",
+      },
+      {
+        subcode: "AD8302",
+        name: "Fundamentals Of Data Science",
+        mark: 50,
+        grade: "A",
+      },
+      {
+        subcode: "AD8302",
+        name: "Fundamentals Of Data Science",
+        mark: 50,
+        grade: "A",
+      },
+      {
+        subcode: "AD8302",
+        name: "Fundamentals Of Data Science",
+        mark: 50,
+        grade: "A",
+      },
+      {
+        subcode: "AD8302",
+        name: "Fundamentals Of Data Science",
+        mark: 50,
+        grade: "A",
+      },
     ];
 
     return {
       year,
       sem,
       markData,
+      testName,
     };
   },
 };
@@ -60,10 +97,19 @@ export default {
     border: none;
     outline: 0;
     text-align: center;
-    border-radius: 0 25px 25px 0;
   }
   select[name="year"] {
     border-radius: 25px 0 0 25px;
   }
+  select[name="test"] {
+    border-radius: 0 25px 25px 0;
+  }
 }
+
+.attendance {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 </style>
