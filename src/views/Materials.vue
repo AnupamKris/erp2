@@ -2,20 +2,20 @@
   <div class="materials">
     <div class="dropdown">
       <select name="year" id="years" v-model="year">
-        <option value="Year 1" selected>Year 1</option>
-        <option value="Year 2">Year 2</option>
-        <option value="Year 3">Year 3</option>
-        <option value="Year 4">Year 4</option>
+        <option value="1" selected>Year 1</option>
+        <option value="2">Year 2</option>
+        <option value="3">Year 3</option>
+        <option value="4">Year 4</option>
       </select>
       <select name="sem" id="sems" v-model="sem">
-        <option v-if="year == 'Year 1'" value="1">Sem 1</option>
-        <option v-if="year == 'Year 1'" value="2">Sem 2</option>
-        <option v-if="year == 'Year 2'" value="3">Sem 3</option>
-        <option v-if="year == 'Year 2'" value="4">Sem 4</option>
-        <option v-if="year == 'Year 3'" value="5">Sem 5</option>
-        <option v-if="year == 'Year 3'" value="6">Sem 6</option>
-        <option v-if="year == 'Year 4'" value="7">Sem 7</option>
-        <option v-if="year == 'Year 4'" value="8">Sem 8</option>
+        <option v-if="year == '1'" value="1">Sem 1</option>
+        <option v-if="year == '1'" value="2">Sem 2</option>
+        <option v-if="year == '2'" value="3">Sem 3</option>
+        <option v-if="year == '2'" value="4">Sem 4</option>
+        <option v-if="year == '3'" value="5">Sem 5</option>
+        <option v-if="year == '3'" value="6">Sem 6</option>
+        <option v-if="year == '4'" value="7">Sem 7</option>
+        <option v-if="year == '4'" value="8">Sem 8</option>
       </select>
       <div class="input">
         <input type="text" v-model="query" placeholder="Search" />
@@ -44,91 +44,91 @@ export default {
   setup() {
     const query = ref("");
     const searchResults = ref([]);
-    const year = ref("Year 1");
+    const year = ref("1");
     const sem = ref("1");
     const materials = ref([
       {
         subject: "OS",
         code: "AD8301",
         description: "Unit 1 Notes",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "FODS",
         code: "AD8351",
         description: "Unit 2 Notes",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "MA",
         code: "MA8655",
         description: "Linear Algebra",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "GIS",
         code: "GE8654",
         description: "Geo Info Sys",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "OS",
         code: "AD8301",
         description: "Unit 1 Notes",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "FODS",
         code: "AD8351",
         description: "Unit 2 Notes",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "MA",
         code: "MA8655",
         description: "Linear Algebra",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "GIS",
         code: "GE8654",
         description: "Geo Info Sys",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "OS",
         code: "AD8301",
         description: "Unit 1 Notes",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "FODS",
         code: "AD8351",
         description: "Unit 2 Notes",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "MA",
         code: "MA8655",
         description: "Linear Algebra",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
       {
         subject: "GIS",
         code: "GE8654",
         description: "Geo Info Sys",
-        year: "Year 1",
+        year: "1",
         sem: "1",
       },
     ]);

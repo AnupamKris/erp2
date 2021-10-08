@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Authentication from '../views/Authentication.vue'
 import Materials from '../views/Materials.vue'
+import Academics from '../views/Academics.vue'
 
 const routes = [
   {
@@ -10,7 +11,11 @@ const routes = [
     component: Home,
     alias: '/home',
   },
-  
+  {
+    path: '/academics',
+    name: 'Academics',
+    component: Academics,
+  },
   {
     path: '/materials',
     name: 'Materials',
