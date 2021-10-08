@@ -1,5 +1,5 @@
 <template>
-  <div class="attendance">
+  <div class="academics">
     <div class="dropdown">
       <select name="year" id="years" v-model="year">
         <option value="1" selected>Year 1</option>
@@ -97,6 +97,7 @@ export default {
     border: none;
     outline: 0;
     text-align: center;
+    text-align-last: center;
   }
   select[name="year"] {
     border-radius: 25px 0 0 25px;
@@ -106,10 +107,13 @@ export default {
   }
 }
 
-.attendance {
+.academics {
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background: rgb(7,50,148);
+background: linear-gradient(60deg, rgba(7,50,148,1) 0%, rgba(0,212,255,1) 100%);
 }
 
 </style>
