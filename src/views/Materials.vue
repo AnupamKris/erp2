@@ -186,6 +186,7 @@ export default {
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
+
     select {
       font-size: 18px;
       height: 50px;

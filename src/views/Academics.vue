@@ -24,13 +24,15 @@
         <option value="model">Model</option>
       </select>
     </div>
-    <Marks :markData="markData" />
+    <Marks :markData="filtered"  v-if="filtered.length"/>
+    <div class="noData" v-else>Sorry No data available</div>
   </div>
 </template>
 
 <script>
 import { ref } from "@vue/reactivity";
 import Marks from "@/components/Marks.vue";
+import { watchEffect } from "@vue/runtime-core";
 
 export default {
   components: {
@@ -40,45 +42,71 @@ export default {
     const year = ref("1");
     const sem = ref("1");
     const testName = ref("iat1");
-
+    const filtered = ref([]);
     const markData = [
       {
         subcode: "AD8302",
         name: "Fundamentals Of Data Science",
         mark: 50,
         grade: "A",
+        year: "1",
+        sem: "1",
+        test: "iat1"
       },
       {
         subcode: "AD8302",
         name: "Fundamentals Of Data Science",
         mark: 50,
         grade: "A",
+        year: "1",
+        sem: "1",
+        test: "iat1"
       },
       {
         subcode: "AD8302",
         name: "Fundamentals Of Data Science",
         mark: 50,
         grade: "A",
+        year: "1",
+        sem: "1",
+        test: "iat1"
       },
       {
         subcode: "AD8302",
         name: "Fundamentals Of Data Science",
         mark: 50,
         grade: "A",
+        year: "1",
+        sem: "1",
+        test: "iat1"
       },
       {
         subcode: "AD8302",
         name: "Fundamentals Of Data Science",
         mark: 50,
         grade: "A",
+        year: "1",
+        sem: "1",
+        test: "iat1"
       },
     ];
+
+    watchEffect(() => {
+      filtered.value = markData.filter((ele) => {
+        return (
+          ele.year == year.value &&
+          ele.sem == sem.value &&
+          ele.test == testName.value
+        );
+      });
+    });
 
     return {
       year,
       sem,
       markData,
       testName,
+      filtered,
     };
   },
 };
@@ -112,8 +140,11 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgb(7,50,148);
-background: linear-gradient(60deg, rgba(7,50,148,1) 0%, rgba(0,212,255,1) 100%);
+  background: rgb(7, 50, 148);
+  background: linear-gradient(
+    60deg,
+    rgba(7, 50, 148, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
-
 </style>

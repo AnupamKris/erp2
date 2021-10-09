@@ -3,10 +3,7 @@
     <table>
       <thead>
         <tr>
-          <th>Subject Code</th>
-          <th>Subject Name</th>
-          <th>Mark</th>
-          <th>Grade</th>
+          <th v-for="(item , index) in fields" :key="index">{{item}}</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +22,10 @@
 export default {
   props: {
     markData: Object,
+    fields: {
+      type: Array,
+      default: ["Subject Code", "Subject Name", "Mark", "Grade"]
+    }
   },
   setup() {},
 };

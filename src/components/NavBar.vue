@@ -18,6 +18,10 @@
         <p>MATERIALS</p>
         <i class="fa fa-book"></i>
       </div>
+      <div class="nav-item" @click="goToRoute('subjects')">
+        <p>SUBJECTS</p>
+        <i class="fa fa-book"></i>
+      </div>
     </div>
     <div class="settings">
       <div class="nav-item" @click="goToRoute('theme')">

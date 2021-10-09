@@ -2,34 +2,47 @@
   <div class="attendance">
     <div class="dropdown">
       <select name="year" id="years" v-model="year">
-        <option value="Year 1" selected>Year 1</option>
-        <option value="Year 2">Year 2</option>
-        <option value="Year 3">Year 3</option>
-        <option value="Year 4">Year 4</option>
+        <option value="1" selected>Year 1</option>
+        <option value="2">Year 2</option>
+        <option value="3">Year 3</option>
+        <option value="4">Year 4</option>
       </select>
-      <select name="sem" id="sems" v-model="sem">
-        <option v-if="year == 'Year 1'" value="1">Sem 1</option>
-        <option v-if="year == 'Year 1'" value="2">Sem 2</option>
-        <option v-if="year == 'Year 2'" value="3">Sem 3</option>
-        <option v-if="year == 'Year 2'" value="4">Sem 4</option>
-        <option v-if="year == 'Year 3'" value="5">Sem 5</option>
-        <option v-if="year == 'Year 3'" value="6">Sem 6</option>
-        <option v-if="year == 'Year 4'" value="7">Sem 7</option>
-        <option v-if="year == 'Year 4'" value="8">Sem 8</option>
-      </select>
-      <div class="input">
-        <input type="text" v-model="query" placeholder="Search" />
-        <i class="fa fa-search" style="color: black"></i>
-      </div>
     </div>
-    
+
+    <div class="details">
+      <div class="sem1">
+        <h2>SEM1</h2>
+        <div class="total">
+          <div class="hd">Total</div>
+          <p class="tot">26</p>
+        </div>
+        <div class="atn">
+          <div class="field">
+            <div class="hd">Present</div>
+            <p class="present">18</p>
+          </div>
+          <div class="field">
+            <div class="hd">Absent</div>
+            <p class="absent">8</p>
+          </div>
+        </div>
+      </div>
+      <div class="sem2"></div>
+    </div>
   </div>
 </template>
 
+sudo ap
+
 <script>
+import { ref } from "@vue/reactivity";
 export default {
   setup() {
-    return {};
+    const year = ref("");
+
+    return {
+      year,
+    };
   },
 };
 </script>
@@ -43,34 +56,69 @@ export default {
   select {
     font-size: 18px;
     height: 50px;
-    width: 15%;
+    width: 100%;
     border: none;
     outline: 0;
     text-align: center;
-  }
-  select[name="year"] {
-    border-radius: 25px 0 0 25px;
+    background: #606060;
+    color: white;
+
+    border-radius: 25px;
   }
 }
-.input {
-  width: 70%;
-  min-height: 50px;
-  position: relative;
-  input {
-    height: 100%;
+
+.attendance {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .details {
     width: 100%;
-    font-size: 18px;
-    border: none;
-    border-radius: 0 25px 25px 0;
-    outline: none;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  i {
-    position: absolute;
-    right: 15px;
-    font-size: 20px;
-    top: 50%;
-    transform: translate(0, -50%);
+}
+
+.sem1 {
+  width: 90%;
+  height: 100px;
+  background: #141414;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  .total {
+    width: 90%;
+    height: 40%;
+    background: #ffffff;
+    color: #141414;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .atn {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 90%;
+    color: #141414;
+    border-radius: 25px;
+    .field {
+      width: 48%;
+      height: 30px;
+      background: #ffffff;
+      border-radius: 25px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+    }
   }
 }
 </style>

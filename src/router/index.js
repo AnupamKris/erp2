@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 import Authentication from '../views/Authentication.vue'
 import Materials from '../views/Materials.vue'
 import Academics from '../views/Academics.vue'
+import Attendance from '../views/Attendance.vue'
+import Subjects from '../views/Subjects.vue'
 
 const routes = [
   {
@@ -25,6 +27,16 @@ const routes = [
     path: '/authentication',
     name: 'Authentication',
     component: Authentication
+  },
+  {
+    path: '/attendance',
+    name: 'Attendance',
+    component: Attendance
+  },
+  {
+    path: '/subjects',
+    name: 'Subjects',
+    component: Subjects
   },
   {
     path: '/about',
