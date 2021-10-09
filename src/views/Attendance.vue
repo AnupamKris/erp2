@@ -26,17 +26,21 @@
             <p class="absent">8</p>
           </div>
         </div>
-      </div>
+      </div>  
+      <input type="date">
+      <SingleDatePicker />
       <div class="sem2"></div>
     </div>
   </div>
 </template>
 
-sudo ap
+
 
 <script>
 import { ref } from "@vue/reactivity";
+
 export default {
+
   setup() {
     const year = ref("");
 
