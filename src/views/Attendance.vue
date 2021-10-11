@@ -28,7 +28,7 @@
         </div>
       </div>  
       <input type="date">
-      <SingleDatePicker />
+      <Calendar /> 
       <div class="sem2"></div>
     </div>
   </div>
@@ -38,12 +38,13 @@
 
 <script>
 import { ref } from "@vue/reactivity";
-
+import Calendar from "@/components/Calendar.vue"
 export default {
-
+  components: {
+    Calendar
+  },
   setup() {
     const year = ref("");
-
     return {
       year,
     };
