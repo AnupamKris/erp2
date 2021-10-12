@@ -26,9 +26,10 @@
             <p class="absent">8</p>
           </div>
         </div>
-      </div>  
-      <input type="date">
-      <Calendar /> 
+      </div>
+      <input type="date" />
+      <Calendar />
+      <Calendar2 />
       <div class="sem2"></div>
     </div>
   </div>
@@ -38,10 +39,12 @@
 
 <script>
 import { ref } from "@vue/reactivity";
-import Calendar from "@/components/Calendar.vue"
+import Calendar from "@/components/Calendar.vue";
+import Calendar2 from "@/components/Calendar2.vue";
 export default {
   components: {
-    Calendar
+    Calendar,
+    Calendar2,
   },
   setup() {
     const year = ref("");
@@ -110,7 +113,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     width: 90%;
     color: #141414;
     border-radius: 25px;
@@ -122,7 +125,6 @@ export default {
       display: flex;
       justify-content: space-around;
       align-items: center;
-
     }
   }
 }

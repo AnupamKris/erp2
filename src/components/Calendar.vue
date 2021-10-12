@@ -1,15 +1,15 @@
 <template>
   <div class="calendar">
     <div class="topbar">
-      <i class="fa fa-arrow-left"></i>
+      <i @click="monthsub" class="fa fa-arrow-left"></i>
       <span>{{ months[month] }}</span>
-      <i class="fa fa-arrow-right"></i>
+      <i @click="monthadd" class="fa fa-arrow-right"></i>
     </div>
     <div class="dates">
       <div class="weeks" v-for="(week, index) in 'SMTWTFS'" :key="index">
         {{ week }}
       </div>
-      <div class="date" v-for="date in dates" :key="date">
+      <div class="date" v-for="(date, index) in dates" :key="index">
         {{ date }}
       </div>
     </div>
@@ -18,6 +18,7 @@
 
 <script>
 import { ref } from "@vue/reactivity";
+import { onMounted, watchEffect } from "@vue/runtime-core";
 export default {
   setup() {
     const months = [
@@ -34,22 +35,79 @@ export default {
       "November",
       "December",
     ];
-    const getDates = (month, year) => {
-      let rawDates = ['','','',];
-      for (var i = 1; i <= 31; i++) {
+
+    const daysNum = {
+      0: 31,
+      1: 28,
+      2: 31,
+      3: 30,
+      4: 31,
+      5: 30,
+      6: 31,
+      7: 31,
+      8: 30,
+      9: 31,
+      10: 30,
+      11: 31,
+    };
+
+    const monthadd = () => {
+      month.value != 11 ? month.value++ : (month.value = 0);
+      setDates();
+    };
+
+    const monthsub = () => {
+      month.value != 0 ? month.value-- : (month.value = 11);
+      setDates();
+    };
+
+    const getDates = (offset, monthsq, year) => {
+      if (month.value != 1) {
+        var lastDay = daysNum[month.value];
+      } else {
+        var lastDay =
+          (year.value % 4 == 0 && year.value % 100 != 0) ||
+          year.value % 400 == 0
+            ? 29
+            : 28;
+      }
+      offset = offset == 7 || offset == -1 ? 0 : offset;
+      console.log(offset, "offset");
+      let rawDates = " ".repeat(offset).split(" ");
+      for (var i = 1; i <= lastDay; i++) {
         rawDates.push(i);
       }
+      console.log(rawDates);
       return rawDates;
     };
-    let date = new Date();
+
+    const setDates = () => {
+      var date = new Date(month.value + 1 + "/01/2021");
+      var offset = date.getDay();
+      dates.value = getDates(offset - 1, 1, 1);
+    };
+
+    // watchEffect(() => {
+    //   var date = new Date(month.value + "/01/2021");
+    //   var offset = date.getDay();
+    //   dates.value = getDates(offset, 1, 1);
+    // });
+    let date = new Date(new Date().getMonth() + 1 + "/01/2021");
+    let offset = date.getDay();
+
     const month = ref(date.getMonth());
     const year = ref(date.getYear());
-    const dates = ref(getDates(1, 1));
+    const dates = ref(getDates(offset, 1, 1));
+
+    console.log(date.getDay(), date, "asd", year.value);
+
     return {
       month,
       months,
       year,
       dates,
+      monthsub,
+      monthadd,
     };
   },
 };
@@ -68,6 +126,7 @@ export default {
     height: 260px;
     width: 100%;
     display: grid;
+    justify-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     .date {

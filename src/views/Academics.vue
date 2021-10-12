@@ -24,7 +24,7 @@
         <option value="model">Model</option>
       </select>
     </div>
-    <Marks :markData="filtered"  v-if="filtered.length"/>
+    <Marks :markData="filtered" v-if="filtered.length" />
     <div class="noData" v-else>Sorry No data available</div>
   </div>
 </template>
@@ -51,7 +51,7 @@ export default {
         grade: "A",
         year: "1",
         sem: "1",
-        test: "iat1"
+        test: "iat1",
       },
       {
         subcode: "AD8302",
@@ -60,7 +60,7 @@ export default {
         grade: "A",
         year: "1",
         sem: "1",
-        test: "iat1"
+        test: "iat1",
       },
       {
         subcode: "AD8302",
@@ -69,7 +69,7 @@ export default {
         grade: "A",
         year: "1",
         sem: "1",
-        test: "iat1"
+        test: "iat1",
       },
       {
         subcode: "AD8302",
@@ -78,7 +78,7 @@ export default {
         grade: "A",
         year: "1",
         sem: "1",
-        test: "iat1"
+        test: "iat1",
       },
       {
         subcode: "AD8302",
@@ -87,7 +87,7 @@ export default {
         grade: "A",
         year: "1",
         sem: "1",
-        test: "iat1"
+        test: "iat1",
       },
     ];
 
