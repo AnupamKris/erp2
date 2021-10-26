@@ -1,6 +1,7 @@
 <template>
   <NavBar :routes="['Home','About']" :currentPage="currentPage" @change-route="changeRoute"/>  
   <router-view/>
+  <!-- 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 -->
 </template>
 
 <script>  
