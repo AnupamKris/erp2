@@ -136,7 +136,8 @@ export default {
     watchEffect(() => {
       console.log(year.value);
       if (query.value == "") {
-        searchResults.value = materials.value.filter((ele) => {
+        searchResults.value = materials.value.filter(
+          (ele) => {
           return ele.year == year.value && ele.sem == sem.value;
         });
       } else {
