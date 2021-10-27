@@ -11,6 +11,7 @@
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vue-single-date-picker": "^0.5.12",
+    "vue3-touch-events": "^4.1.0",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {

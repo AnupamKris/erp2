@@ -10,14 +10,18 @@
     </div>
 
     <div class="details">
-      <div class="sem1">
-        <h2>SEM1</h2>
+      <div
+        class="sem1"
+        @click="selected == 'sem1' ? (selected = '') : (selected = 'sem1')"
+        :class="{ open: selected == 'sem1' }"
+      >
         <div class="sem-details">
-          <div class="total">
-            <div class="hd">Total</div>
-            <p class="tot">26</p>
-          </div>
+          <h2>SEM1</h2>
           <div class="atn">
+            <div class="field">
+              <div class="hd">Total</div>
+              <p class="tot">26</p>
+            </div>
             <div class="field">
               <div class="hd">Present</div>
               <p class="present">18</p>
@@ -28,8 +32,8 @@
             </div>
           </div>
         </div>
+        <ScrollCard v-if="selected == 'sem1'" />
       </div>
-      <ScrollCard />
       <div class="sem2"></div>
     </div>
   </div>
@@ -48,8 +52,10 @@ export default {
   },
   setup() {
     const year = ref("");
+    const selected = ref("");
     return {
       year,
+      selected,
     };
   },
 };
@@ -91,7 +97,7 @@ export default {
 .sem1 {
   width: 90%;
   height: 50px;
-  background: #141414;
+  background: #949494;
   color: white;
   border-radius: 10px;
   display: flex;
@@ -100,30 +106,21 @@ export default {
   transition: 0.5s;
   justify-content: space-around;
 
-  h2 {
-    flex: 1;
-  }
-
-  &:hover {
-    height: 150px;
-    .sem-details {
-      opacity: 1;
-      flex: 1;
-    }
-  }
-
   .sem-details {
-    height: 0;
-    opacity: 0;
+    height: 1;
+    opacity: 1;
     display: flex;
     flex-direction: row;
-    flex: 0;
+    justify-content: space-around;
+    align-items: center;
     overflow: hidden;
+    width: 90%;
+    height: 80px;
   }
 
   .total {
     width: 90%;
-    height: 40%;
+    height: 30px;
     background: #ffffff;
     color: #141414;
     border-radius: 25px;
@@ -150,5 +147,8 @@ export default {
       align-items: center;
     }
   }
+}
+.open {
+  height: 400px;
 }
 </style>
