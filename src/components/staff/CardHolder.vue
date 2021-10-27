@@ -24,5 +24,11 @@ export default {
   .arrow {
     position: absolute;
   }
+  .left {
+    left: 10px;
+  }
+  .right {
+    right: 10px;
+  }
 }
 </style>

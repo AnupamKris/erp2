@@ -29,10 +29,5 @@ export default {
   width: 300px;
   height: 300px;
   background: #131313;
-</style>
-4141#4141$: dfnuorgkcabn;
-</style>
-4141#4141$: dfnuorgkcabn;
-</style>
-4141#4141$: dfnuorgkcabn;
+}
 </style>
