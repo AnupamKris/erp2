@@ -69,6 +69,7 @@ export default {
 @import url("../assets/global.less");
 
 .navbar {
+  z-index: 10;
   width: 200px;
   height: 100%;
   position: fixed;

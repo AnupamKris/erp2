@@ -5,6 +5,7 @@ import Materials from '../views/Materials.vue'
 import Academics from '../views/Academics.vue'
 import Attendance from '../views/Attendance.vue'
 import Subjects from '../views/Subjects.vue'
+import StaffProfile from '../views/StaffProfile.vue'
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: '/subjects',
     name: 'Subjects',
     component: Subjects
+  },
+  {
+    path: '/staff',
+    name: 'StaffProfile',
+    component: StaffProfile
   },
   {
     path: '/about',

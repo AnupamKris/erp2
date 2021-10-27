@@ -29,24 +29,22 @@
           </div>
         </div>
       </div>
-      <input type="date" />
-      <Calendar />
-      <Calendar2 />
+      <ScrollCard />
       <div class="sem2"></div>
     </div>
   </div>
 </template>
 
-
-
 <script>
 import { ref } from "@vue/reactivity";
 import Calendar from "@/components/Calendar.vue";
 import Calendar2 from "@/components/Calendar2.vue";
+import ScrollCard from "@/components/ScrollCard.vue";
 export default {
   components: {
     Calendar,
     Calendar2,
+    ScrollCard,
   },
   setup() {
     const year = ref("");
@@ -109,7 +107,7 @@ export default {
   &:hover {
     height: 150px;
     .sem-details {
-      opacity: 1;    
+      opacity: 1;
       flex: 1;
     }
   }
@@ -122,7 +120,6 @@ export default {
     flex: 0;
     overflow: hidden;
   }
-
 
   .total {
     width: 90%;
@@ -154,6 +151,4 @@ export default {
     }
   }
 }
-
-
 </style>
